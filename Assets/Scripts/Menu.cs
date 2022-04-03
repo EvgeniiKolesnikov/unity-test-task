@@ -13,10 +13,10 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void SetScoreUI() {
-		highScoreText.text = ScoreManager.Instance.HighScore.ToString();
+		highScoreText.text = Global.highScore.ToString();
 	}
 
 	public void SetLevelUI() {
-		highLevelText.text = ScoreManager.Instance.HighLevel.ToString();
+		highLevelText.text = Global.highLevel.ToString();
 	}
 }

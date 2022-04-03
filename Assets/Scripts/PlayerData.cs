@@ -4,13 +4,13 @@ using UnityEngine;
 
 [System.Serializable]
 public class PlayerData {
-	public int score;
-	public int level;
+	public int highScore;
+	public int highLevel;
 	//public int highScore;
 	//public int highLevel;
 
 	public PlayerData () {
-		score = Global.sessionScore;
-		level = Global.sessionLevel;
+		highScore = Global.sessionScore;
+		highLevel = Global.sessionLevel;
 	}
 }

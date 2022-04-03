@@ -10,13 +10,14 @@ public class GameOver : MonoBehaviour {
 	void Start() {
 		SetScoreUI();
 		SetLevelUI();
+		ScoreManager.Instance.SaveHighData();
 	}
 
 	public void SetScoreUI() {
-		scoreSessionText.text = ScoreManager.Instance.Score.ToString();
+		scoreSessionText.text = Global.sessionScore.ToString();
 	}
 
 	public void SetLevelUI() {
-		levelSessionText.text = ScoreManager.Instance.Level.ToString();
+		levelSessionText.text = Global.sessionLevel.ToString();
 	}
 }
