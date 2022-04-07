@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraScaler : MonoBehaviour {
 	private Camera componentCamera;
@@ -35,6 +36,12 @@ public class CameraScaler : MonoBehaviour {
 	}
 
 	void SetCameraSize(int boardSize, float cardHeight) {
-		componentCamera.orthographicSize = (boardSize + 2) * cardHeight / 2;
+		string sceneName = SceneManager.GetActiveScene().name;
+		if (sceneName == "Game") {
+			componentCamera.orthographicSize = (boardSize + 2) * cardHeight / 2;
+		} else {
+			componentCamera.orthographicSize = 17.5f;
+		}
+
 	}
 }
