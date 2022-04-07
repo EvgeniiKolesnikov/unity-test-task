@@ -65,13 +65,14 @@ public class Board : MonoBehaviour {
 	}
 
 	IEnumerator GenerateBoard() {
-		yield return new WaitForSeconds(.05f);
+		float delay = .05f / (boardSize * boardSize / 9f);
+		yield return new WaitForSeconds(delay);
 		AddHeroCard();
 		while (freePositions.Count > 0) {
-			yield return new WaitForSeconds(.05f);
+			yield return new WaitForSeconds(delay);
 			AddRandomCard();
 		}
-		yield return new WaitForSeconds(.05f);
+		yield return new WaitForSeconds(delay);
 		GameManager.Instance.SwitchText(GameManager.Instance.loadingText);
 		GameManager.Instance.canMove = true;
 	}
