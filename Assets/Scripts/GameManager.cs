@@ -57,11 +57,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void AddUITextInPosition(TextMeshProUGUI uiText, TextMeshProUGUI uiPlace) {
-		Instantiate(
+		var p = Instantiate(
 			uiText,
-			uiPlace.transform.position + Vector3.down * 50,
+			uiPlace.transform.position,
 			Quaternion.identity,
-			uiPlace.gameObject.transform.parent);
+			uiPlace.gameObject.transform.parent
+		);
+		p.transform.localPosition += Vector3.down * 36;
 	}
 
 	void SetChanceRedCard() {
